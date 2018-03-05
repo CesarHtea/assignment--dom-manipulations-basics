@@ -76,12 +76,34 @@ document.querySelector("#remove button").addEventListener('click',function(){
 
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
   // TASK #6
+
+  // convertir <div class="answer-box"> en elemento boxflex parent
+    // invertir el orden de sus childs
+
+  boxTarget = document.querySelector("#reverse-squares .student-workspace .answer-box") 
+  boxTarget.style.display = "flex"
+  boxTarget.style.flexDirection = "row-reverse"
+  boxTarget.style.flexWrap = "wrap"
+  boxTarget.style.justifyContent = "center"
+
+  console.log(boxTarget.style)
+
 })
 
 document.querySelector("#pig-latin button").addEventListener('click',function(){
   // TASK #7
+   let item = document.querySelectorAll("#pig-latin #tasks li")
+   const arrayOfElements = [...item]
+   for( let i = 0 ; i < arrayOfElements.length ; i++ ) {
+      const element = item[i]
+      let text = element.textContent
+      let resText = text.split('').reverse().join('')
+      element.textContent = resText
+   }
+
 })
 
 document.querySelector("#cycle-image button").addEventListener('click',function(){
    //TASK #8
+
 })
